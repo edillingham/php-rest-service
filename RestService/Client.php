@@ -254,7 +254,7 @@ class Client
         $pos = 0;
         $strLen = strlen($json);
         $indentStr = '    ';
-        $newLine = "\n";
+        $newLine = PHP_EOL;
         $inEscapeMode = false; //if the last char is a valid \ char.
         $outOfQuotes = true;
 

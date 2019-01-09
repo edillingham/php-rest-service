@@ -791,6 +791,10 @@ class Server
         //does the requested uri exist?
         list($callableMethod, $regexArguments, $method, $routeUri) = $this->findRoute($uri, $requiredMethod);
 
+        if(!is_array($regexArguments)) {
+        	$regexArguments = [];
+        }
+
         if ((!$callableMethod || $method != 'options') && $requiredMethod == 'options') {
             $description = $this->describe($uri);
             $this->send($description);
